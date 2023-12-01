@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <!-- Meta tag obbligatori -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Big+Shoulders+Text:100,300,400,500,600,700,800,900&display=swap">
+    <link rel="stylesheet" href="index.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>La Pizzaccia - Pizzeria</title>
+
+    <style>
+        body {
+            padding-top: 56px; /* Aggiungi spazio per la top bar fissa */
+        }
+
+        nav {
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            background-color: #222;
+        }
+
+        .section-intro {
+            position: relative;
+            z-index: 0;
+        }
+
+        .section-intro h1 {
+            text-align: center;
+            color: #ffffff;
+            font-size: 6em; /* Aumenta la dimensione del titolo */
+            font-weight: 900; /* Aumenta il peso del titolo */
+            margin-bottom: 30px; /* Aggiungi spazio sotto il titolo */
+        }
+
+        /* Aggiunto uno stile per la top bar */
+        .nav-flex-row {
+            background-color: #222;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            transition: top 0.3s;
+            z-index: 1000;
+        }
+
+        .nav-flex-row li a {
+            color: #ffffff !important;
+        }
+
+        /* Aggiunto stile per rendere il pulsante "Prenota un tavolo" più visibile */
+        .link-to-book {
+            background-color: #ffcc29;
+            color: #222;
+            border: 2px solid #ffcc29;
+            transition: background-color 0.3s;
+        }
+
+        .link-to-book:hover {
+            background-color: #222;
+            color: #ffcc29;
+        }
+
+        .map-section {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .map-container {
+            position: relative;
+            width: 80%;
+            margin: auto;
+            padding-bottom: 60%;
+            overflow: hidden;
+        }
+
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .opening-time,
+        .contact-adress {
+            flex: 1;
+            margin: 30px 20px;
+            font-size: 1.2em;
+        }
+
+        .form-group p {
+            font-size: 1.2em;
+        }
+
+        .opening-time p span,
+        .contact-adress p span {
+            display: block;
+        }
+
+        @media (min-width: 577px) and (max-width: 800px) {
+            .section-intro {
+                height: 500px;
+            }
+
+            .about-section p,
+            .about-section h3 {
+                font-size: 20px;
+            }
+
+            .carousel-inner {
+                height: auto;
+            }
+
+            .row-flex {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+        @media screen and (max-width: 576px) {
+            .section-intro {
+                height: 300px;
+            }
+
+            .about-section {
+                padding: 30px;
+            }
+
+            .section-intro h1 {
+                font-size: 2em;
+            }
+
+            .about-section p,
+            .about-section h3 {
+                font-size: 15px;
+            }
+
+            .carousel-inner {
+                height: auto;
+            }
+
+            .row-flex {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .row-flex h3 {
+                font-size: 25px;
+                text-align: center;
+            }
+
+            .form-group p {
+                font-size: 15px;
+            }
+
+            .opening-time p span,
+            .contact-adress p span {
+                font-size: 15px;
+                text-align: center;
+            }
+        }
+		
+		.carousel-inner {
+            height: 700px;
+        }
+
+        .carousel-item img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <ul class="nav-flex-row">
+            <li class="nav-item">
+                <a href="#about">Chi Siamo</a>
+            </li>
+            <li class="nav-item">
+                <a href="#menu">Menu</a>
+            </li>
+            <li class="nav-item">
+                <a href="#reservation">Prenotazioni</a>
+            </li>
+            <li class="nav-item">
+                <a href="#shop">Negozio</a>
+            </li>
+            <li class="nav-item">
+                <a href="#map">Mappa</a>
+            </li>
+        </ul>
+    </nav>
+
+    <section class="section-intro">
+        <header>
+            <h1>La Pizzaccia</h1>
+        </header>
+        <div class="link-to-book-wrapper">
+            <a class="link-to-book" href="#reservations">Prenota un tavolo</a>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <article>
+            <h3>
+                Sezione per il testo sul perché La Pizzaccia è la migliore pizzeria.
+            </h3>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. A quos, voluptatum illum mollitia dolores libero placeat
+                nesciunt quasi adipisci impedit! Lorem ipsum dolor sit, amet consectetur adipisicing elit. A quos, voluptatum illum
+                mollitia dolores libero placeat nesciunt quasi adipisci impedit!
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. A quos, voluptatum illum mollitia dolores libero placeat
+                nesciunt quasi adipisci impedit! Lorem ipsum dolor sit.
+            </p>
+        </article>
+    </section>
+
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <!-- Cambiata la prima immagine con un'immagine di esempio da Internet -->
+            <div class="carousel-item active">
+                <img src="https://via.placeholder.com/800x400" class="d-block w-100" alt="Pizza Placeholder">
+            </div>
+            <!-- Aggiornate le immagini del carousel con URL da Internet -->
+            <div class="carousel-item">
+                <img src="https://placekitten.com/800/401" class="d-block w-100" alt="Pizza 2">
+            </div>
+            <div class="carousel-item">
+                <img src="https://placekitten.com/800/402" class="d-block w-100" alt="Pizza 3">
+            </div>
+        </div>
+        <!-- I tuoi controlli del carousel qui -->
+    </div>
+
+    <div class="container">
+        <div class="row-flex">
+            <div class="opening-time">
+                <h3>
+                    Orari di Apertura
+                </h3>
+                <p>
+                    <span>Lunedì—Giovedì: 11:00 — 22:00</span>
+                    <span>Venerdì—Sabato: 11:00 — 23:00 </span>
+                    <span>Domenica: 12:00 — 18:00</span>
+                </p>
+            </div>
+            <div class="contact-address">
+                <h3>
+                    Contatti
+                </h3>
+                <p>
+                    <span>000 9283 8456</span>
+                    <span>15 Piazza Italia</span>
+                    <span>Roma, RM 00100</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sezione Mappa -->
+    <section id="map" class="map-section">
+        <h3>La Nostra Posizione</h3>
+        <div class="map-container">
+            <!-- Sostituisci il seguente iframe con un codice di incorporamento mappa reale -->
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3121.5588677218265!2d12.496365815258671!3d41.90278368571884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132f6baf1f5d2a0d%3A0xe2017e28782d5e1a!2sColosseum!">
+            </iframe>
+        </div>
+    </section>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
