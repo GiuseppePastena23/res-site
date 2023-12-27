@@ -113,15 +113,17 @@
                 font-size: 20px;
             }
 
-            .carousel-inner {
-                height: auto;
-            }
-
-	    .carousel-item img {
-    		height: 100%;
-    		width: 100%;
-   		object-fit: cover;
-	    }
+	    .carousel-inner {
+	    display: flex;
+	    flex-direction: column;
+	    align-items: center;
+	}
+	
+            .carousel-item img {
+	    max-height: 100%;
+	    width: auto;
+	    margin: 0 auto;
+	}
 
             .row-flex {
                 display: flex;
@@ -165,11 +167,13 @@
                 font-size: 15px;
             }
 
-            .opening-time p span,
-            .contact-adress p span {
-                font-size: 15px;
-                text-align: center;
-            }
+            .opening-time,
+.contact-address {
+    flex: 1;
+    margin: 30px auto; /* Center the content horizontally */
+    text-align: center;
+    font-size: 1.2em;
+}
         }
 		
 		.carousel-inner {
