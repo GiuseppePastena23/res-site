@@ -5,194 +5,409 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Pizzaccia - Ferrara Pizzeria</title>
     <style>
+        /* Custom fonts */
+        @font-face {
+            font-family: 'PaytoneOne-Regular';
+            src: url('fonts/PaytoneOne-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Comfortaa-Regular';
+            src: url('fonts/Comfortaa-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+		
+		#hcg-slider-1 .hcg-slide-container {
+	width: auto;
+	height: auto;
+}
+.hcg-slider-body {
+	height: 100%;
+	width: 100%;
+}
+.hcg-slider {
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.hcg-slide-container {
+	max-width: 100%;
+	display: inline-block;
+	position: relative;
+}
+.hcg-slides {
+	width: 100%;
+	height: 100%;
+	display: none;
+	overflow: hidden;
+	justify-content: center;
+	align-items: center;
+	border-radius: 5px;
+	
+}
+.hcg-slides img {
+	max-width: 100%;
+	max-height: 100%;
+	display: inline-block;
+}
+/************CSS Animation***********/
+
+
+.animated { 
+	animation-name: fadeIn; 
+	animation-duration: 1s;
+}
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+.fadeIn {
+	animation-name: fadeIn;
+}
+
+
+
+
+
         body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
+    font-family: 'Comfortaa-Regular', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.4) url('sfondo.jpg') center center scroll;
+    background-size: 40%;
+    background-position: center;
+    background-repeat: repeat;
+    color: #333;
+}
 
-        header {
-            height: 600px;
-            background-image: url(pizza.jpeg);
-            background-size: cover;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
+p {
+    color: white;
+}
 
-        h1 {
-            margin: 0;
-            font-size: 48px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-        }
+/* Header styles */
+header {
+    height: 300px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)), url('pizza.jpeg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
 
-        .section-title {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
+h1 {
+    margin: 0;
+    font-size: 48px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    z-index: 2;
+    font-family: 'PaytoneOne-Regular', sans-serif;
+}
 
-        section {
-            text-align: center;
-            padding: 50px 20px;
-        }
+/* Section title styles */
+.section-title {
+    font-weight: bold;
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #FFD700; 
+}
 
-        img {
-            max-width: 100%;
-            height: auto;
-        }
+/* Navigation bar styles */
+.top-bar {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        .address, .phone {
-            font-size: 18px;
-            margin: 10px 0;
-        }
+.menu img {
+	width:100%
+}
 
-        .menu img {
-            max-width: 80%;
-            margin: 20px 0;
-        }
+.menu-toggle {
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    color: white;
+}
 
-        .slider {
-            max-width: 100%;
-            overflow: hidden;
-            position: relative;
-        }
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
 
-        .slider img {
-            width: 100vw;
-            height: auto;
-            display: none;
-        }
+.nav-list li {
+    margin-right: 10px;
+}
 
-        .slider-control {
-            position: absolute;
-            top: 50%;
-            left: 0;
-            right: 0;
-            display: flex;
-            justify-content: space-between;
-            margin-top: -20px; /* Adjust this value based on your design */
-        }
+.top-bar a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    display: block;
+}
 
-        .prev, .next {
-            cursor: pointer;
-            padding: 10px;
-            background-color: #333;
-            color: white;
-            border: none;
-            opacity: 0.7;
-            transition: opacity 0.3s ease;
-        }
+.top-bar a:hover {
+    background-color: #555;
+}
 
-        .prev:hover, .next:hover {
-            opacity: 1;
-        }
+/* Main sections styles */
+section {
+    text-align: center;
+    padding: 50px 20px 0;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.7);
+}
 
-        .map {
-            margin-top: 50px;
-        }
+/* Contact info styles */
+/* Styling for the Contatti section */
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+}
 
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
-        }
+.contact-info > div {
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 10px;
+    padding: 20px;
+    width: calc(33.33% - 20px);
+    text-align: center;
+    box-sizing: border-box; /* Include padding in the width */
+}
+.contact-info p {
+    font-size: 18px;
+    border-bottom: 2px solid;
+    color: white;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 0px;
+    box-sizing: border-box;
+}
 
-        /* Media Queries for responsiveness */
-        @media screen and (max-width: 768px) {
-            header {
-                height: 400px;
-            }
-        }
+.contact-info p:not(:last-child) {
+    margin-bottom: 5px;
+}
 
-        @media screen and (max-width: 480px) {
-            header {
-                height: 300px;
-            }
-        }
+.contact-info strong {
+    font-weight: bold;
+    font-size: 20px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Map styles */
+.map {
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .contact-info > div {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .contact-info {
+        justify-content: space-around;
+    }
+
+    .contact-info strong {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .contact-info {
+        flex-direction: column;
+    }
+
+    .contact-info > div {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .contact-info strong {
+        font-size: 16px;
+        margin-bottom: 6px;
+    }
+}
+
+
+}
     </style>
 </head>
 <body>
-    <header>
-        <h1>La Pizzaccia</h1>
-    </header>
 
-    <section>
-        <div class="section-title">Contatti</div>
-        <div class="address">Your Pizzeria Address, Ferrara</div>
-        <div class="phone">Phone: +123 456 789</div>
-    </section>
+<header>
+    <h1>LA PIZZACCIA</h1>
+</header>
 
-    <section>
-        <div class="section-title">Menu</div>
-        <div class="menu">
-            <img src="menu-photo.jpg" alt="Pizza Menu">
+<section>
+    <div class="section-title">Contatti</div>
+    <div class="contact-info">
+        <div>
+            <p><strong>Indirizzo:</strong><br>Via delle Pizze, 123, Ferrara</p>
         </div>
-    </section>
-
-    <section>
-        <div class="section-title">Le nostre pizze</div>
-        <div class="slider">
-            <img src="https://via.placeholder.com/600x400" alt="Pizza 1">
-            <img src="https://via.placeholder.com/600x400" alt="Pizza 2">
-            <img src="https://via.placeholder.com/600x400" alt="Pizza 3">
+        <div>
+            <p><strong>Numero di telefono:</strong><br>Phone: +39 012 345 6789</p>
         </div>
-        <div class="slider-control">
-            <button class="prev" onclick="prevSlide()">❮ Prev</button>
-            <button class="next" onclick="nextSlide()">Next ❯</button>
+        <div>
+            <p><strong>Orari di apertura:</strong><br>Monday-Sunday: 11:00 AM - 10:00 PM</p>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section>
-        <div class="section-title">Dove trovarci</div>
-        <div class="map">
-            <!-- Embed Google Maps or any other map service with your pizzeria's location -->
-            <!-- Example using Google Maps iframe -->
-            <iframe
-                width="100%"
-                height="450"
-                style="border:0"
-                loading="lazy"
-                allowfullscreen
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2897.244789812531!2d11.618216215496342!3d44.83493397909879!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132d5ba0767f2c23%3A0x75cc6b1dbb50cf92!2sLa%20Pizzaccia!5e0!3m2!1sen!2sus!4v1641283208763!5m2!1sen!2sus"
-            ></iframe>
-        </div>
-    </section>
+<section>
+    <div class="section-title">Menu</div>
+    <div class="menu">
+        <img src="pizza.jpeg" alt="Placeholder Menu">
+    </div>
+</section>
 
-    <footer>
-        &copy; 2024 La Pizzaccia - Ferrara Pizzeria
-    </footer>
+<section>
+    <div class="section-title">Chi Siamo</div>
+    <div class="chi-siamo">
+        <p>La Pizzaccia è una pizzeria tradizionale situata nel cuore di Ferrara, famosa per le sue autentiche pizze italiane e l'atmosfera accogliente. Venite a trovarci per un'esperienza gastronomica indimenticabile!</p>
+    </div>
+</section>
 
-    <script>
-        let currentSlide = 0;
 
-        function showSlide(index) {
-            const slides = document.querySelectorAll('.slider img');
-            if (index >= slides.length) {
-                currentSlide = 0;
-            } else if (index < 0) {
-                currentSlide = slides.length - 1;
-            } else {
-                currentSlide = index;
-            }
+<!--<section>
+<div id="hcg-slider-1" class="hcg-slider">
+ <div cass="section-title">Le Nostre Pizze</div>
+	<div class="hcg-slide-container">
+	<div class="hcg-slider-body">
+		<a class="hcg-slides animated" style="display:flex">
+			<span class="hcg-slide-number">1/5</span>
+			<img src="https://html-generator.com/uploads/images/2024/01/03/65716B8B55EQQBA.jpeg" alt="65716B8B55EQQBA.jpeg">
+			<span class="hcg-slide-text">65716B8B55EQQBA.jpeg</span>
+		</a>
+	</div>
+</div>
+</div>
+</section>
+-->
+<section>
+    <div class="section-title">Dove trovarci</div>
+    <div class="map">
+    <iframe width="80%" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=Via%20Venti%20SettembreVia%20Venti%20Settembre%20183/B%20Ferrara+(map)&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe> <a href='https://www.easybooking.eu/'>Easybooking.eu</a> <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=5019a509b65a7d67ee89611b2ecb53e88ae0ead3'></script>
+</div>
+</section>
 
-            slides.forEach((slide, i) => {
-                slide.style.display = i === currentSlide ? 'block' : 'none';
-            });
-        }
 
-        function nextSlide() {
-            showSlide(currentSlide + 1);
-        }
+<section>
+<div class="section-title">Recensioni dei nostri clienti</div>
+<script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+<div class="elfsight-app-788dce00-3712-4c73-934c-ed30d003c3a6" data-elfsight-app-lazy></div>
+</section>
+<footer>
+    &copy; 2024 La Pizzaccia - Ferrara Pizzeria
+</footer>
 
-        function prevSlide() {
-            showSlide(currentSlide - 1);
-        }
 
-        window.onload = () => showSlide(currentSlide);
-    </script>
+<script>
+	(() => {
+//If you want to add more images, add the link name and URL image URL in the array list below.
+	const images_list = [
+{
+    "url": "https://html-generator.com/uploads/images/2024/01/03/65716B8B55EQQBA.jpeg",
+    "alt": "",
+    "name": "65716B8B55EQQBA.jpeg",
+    "link": ""
+},
+{
+    "url": "https://html-generator.com/uploads/images/2024/01/03/76582BBDDPOP5SB.jpeg",
+    "alt": "",
+    "name": "76582BBDDPOP5SB.jpeg",
+    "link": ""
+},
+{
+    "url": "https://html-generator.com/uploads/images/2024/01/03/87058RGLOIC2KTM.jpeg",
+    "alt": "",
+    "name": "87058RGLOIC2KTM.jpeg",
+    "link": ""
+},
+{
+    "url": "https://html-generator.com/uploads/images/2024/01/03/98698SS719N77WE.jpeg",
+    "alt": "",
+    "name": "98698SS719N77WE.jpeg",
+    "link": ""
+},
+{
+    "url": "https://html-generator.com/uploads/images/2024/01/03/99858Z80N434XMN.jpeg",
+    "alt": "",
+    "name": "99858Z80N434XMN.jpeg",
+    "link": ""
+}
+	];
+
+// generated by https://www.html-code-generator.com/html/image-slideshow-generator
+	let slider_id = document.querySelector("#hcg-slider-1");
+
+	// append all images
+	let dots_div = "";
+	let images_div = "";
+	for (let i = 0; i < images_list.length; i++) {
+		// if no link without href="" tag
+		let href = (images_list[i].link == "" ? "":' href="'+images_list[i].link+'"');
+		images_div += '<a'+href+' class="hcg-slides animated"'+(i === 0 ? ' style="display:flex"':'')+'>'+
+						'<img src="'+images_list[i].url+'" alt="'+images_list[i].name+'">'+
+					 '</a>';
+	}
+	slider_id.querySelector(".hcg-slider-body").innerHTML = images_div;
+	let slide_index = 0;
+
+	const images = slider_id.querySelectorAll(".hcg-slides");
+	const showSlides = () => {
+		if (slide_index > images.length-1) {
+			slide_index = 0;
+		}
+		if (slide_index < 0) {
+			slide_index = images.length-1;
+		}
+		for (let i = 0; i < images.length; i++) {
+			images[i].style.display = "none";
+			if (i == slide_index) {
+				images[i].style.display = "flex";
+			}
+		}
+	}
+
+	// auto play
+	setInterval(() => {
+		slide_index++;
+		showSlides();
+	}, 5000);
+
+})();
+</script>
+
 </body>
 </html>
